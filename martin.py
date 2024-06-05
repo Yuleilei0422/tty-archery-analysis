@@ -59,9 +59,9 @@ def predict_score(temperature, humidity, windspeed):
 # Streamlit 應用
 st.title("Martin's Score Prediction System")
 
-temperature = st.number_input('Temperature')
-humidity = st.number_input('Humidity')
-windspeed = st.number_input('Wind Speed')
+temperature = st.number_input('Temperature', min_value=25, max_value=35)
+humidity = st.number_input('Humidity', min_value=75, max_value=85)
+windspeed = st.number_input('Wind Speed', min_value=0.0, max_value=1.0)
 
 if st.button('Predict'):
     predicted_score = predict_score(temperature, humidity, windspeed)
